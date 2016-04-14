@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="thirdparty/bootstrap.min.css">
+    <link rel="stylesheet" href="thirdparty/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stars.css">
+    <script src="thirdparty/external/jquery/jquery.js"></script>
+    <script src="thirdparty/bootstrap.min.js"></script>
+    <script src="thirdparty/jquery-ui.js"></script>
+
+
+    <script data-main="app" src="thirdparty/require.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="starCont" style="height:0px">
+                          <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+                </div>
+    <div class="sky">
+      
+        <div class="container">
+
+          
+            <div class="row">
+                <div>
+                    <h2>Custom Globe</h2>
+
+
+                </div>
+                <div id="alert">
+                    <div class="alert alert-warning">
+                        <a href="#" class="close" onClick='$("#alert").css("visibility","hidden");' aria-label="close">&times;</a>
+                        <div id="alertContent">Load Not finished! wait few seconds and try again...</div>
+                    </div>
+
+                </div>
+
+                <div id="leftMenu">
+                    <br>
+                    <div id="save">
+                        <button class="btn btn-info" type="button" id="saveButton">Save Globe</button>
+
+                        <button class="btn btn-info" type="button" id="loadButton">Load Globe</button>
+
+                    </div>
+                    <br>
+                    <br>
+                    <button id="openOptions" type="button" class="btn btn-info">Options</button>
+
+                    <br>
+                    <br>
+                    <div id="options">
+                        <br>
+                        <div id="defaultLayers">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="compass" type="checkbox" checked value="0">Compass</label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input id="controls" type="checkbox" checked value="1">Controls</label>
+                            </div>
+                            <div class="checkbox ">
+                                <label>
+                                    <input id="coordinates" type="checkbox" checked value="2">Coordinates</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sel1">Select Data:</label>
+
+                            <select class="form-control" id="type">
+
+                                <option selected value="-1">Select...</option>
+                                <option value="0">GeoJSON</option>
+                                <option value="1">KML</option>
+                                <option value="2">GeoTiff</option>
+                                <option value="3">Collada</option>
+
+                            </select>
+                        </div>
+
+
+
+                        <div id="optionsUrl">
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <br>
+                            <input type="text" class="form-control" id="url" placeholder="Service URL">
+                            <br>
+                        </div>
+                        <br>
+                        <button id="addRend" type="button" class="btn btn-info">Add</button>
+
+                    </div>
+
+                    <div id="services_list">
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="globe">
+                    <canvas width="1000" height="1000" id="canvasOne">
+                        Your browser does not support HTML5 Canvas.
+                    </canvas>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <script>
+            var open = 0;
+            $("#openOptions").click(function() {
+                if (!open) {
+                    open = 1;
+                    $("#options").css("height", "100px");
+                } else {
+                    open = 0;
+                    $("#options").css("height", "0px");
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>
